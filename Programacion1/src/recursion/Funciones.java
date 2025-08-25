@@ -109,4 +109,16 @@ public static void imprimirEspaciado2(String s) {
 		 return s.charAt(0) + reemplazarCaracter(s.substring(1),original,nuevo);
 		 
 	 }
+	 
+	 public static String cambiarConsonante(String s, char r) {
+		 
+		 if(s.isEmpty()) {
+			 return s;
+		 }
+		 
+		 if(!esVocal(s.charAt(0))) {
+			 return r + cambiarConsonante(s.substring(1),r);
+		 }
+		 return s.charAt(0) + cambiarConsonante(s.substring(1),r);
+	 }
 }
