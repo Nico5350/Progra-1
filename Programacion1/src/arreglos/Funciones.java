@@ -2,7 +2,7 @@ package arreglos;
 
 import java.util.Scanner;
 
-public class Arreglos {
+public class Funciones {
 	
 	public static int[] sinRepetidos(int[] a) {
 		int[] resul = new int[a.length-cantidadDeRepetidos(a)];
