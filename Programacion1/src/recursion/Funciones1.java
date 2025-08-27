@@ -234,7 +234,17 @@ public class Funciones1 {
 			return buscarElemento(a,item,i+1);
 		}
 		
+		// Utilizando Funcion Auxiliar y Arrays
+		public static int max(int[] a) {
+			
+			return max(a, 0, a[0]);
+		}
+		
 		public static int max(int[] a, int i, int max) {
+			
+			if(i >= a.length) {
+				return max;
+			}
 			
 			if(a[i] > max) {
 				max = a[i];
@@ -244,6 +254,65 @@ public class Funciones1 {
 			
 		}
 		
+		public static boolean esConsonante(char c) {
+			String aux = "bcdfghjklmnpqrstvwxyz";
+			aux = aux + aux.toUpperCase();
+			return aux.indexOf(c) != -1;
+		}
 		
+		// Utilizando Funcion Auxiliar y Arrays
+		public static int restaCMenosV2(String s, int voc, int con) {
+			
+			if(s.isEmpty()) {
+				return con-voc;
+			}
+			
+			
+			if(esVocal(s.charAt(0))) {
+				return restaCMenosV2(s.substring(1), voc+1 , con);
+			}
+			
+			if(esConsonante(s.charAt(0))) {
+				return restaCMenosV2(s.substring(1), voc, con+1 );
+			}
+			
+			return restaCMenosV2(s.substring(1), voc, con);
+		}
+		
+		public static int restaCMenosV(String s) {
+			
+			if(s.isEmpty()) {
+				return 0;
+			}
+			
+			if(esVocal(s.charAt(0))) {
+				return -1 + restaCMenosV(s.substring(1));
+			}
+			
+			if(esConsonante(s.charAt(0))) {
+				return 1 + restaCMenosV(s.substring(1));
+			}
+			
+			return restaCMenosV(s.substring(1));
+		}
+		
+		// Utilizando Funcion Auxiliar y Arrays
+		public static String separarVC(String s, String voc, String con) {
+			
+			if(s.isEmpty()) {
+				return voc+con;
+			}
+			
+			if(esVocal(s.charAt(0))) {
+				return separarVC(s.substring(1), voc + s.charAt(0), con);
+			}
+			
+			if(esConsonante(s.charAt(0))) {
+				return separarVC(s.substring(1), voc, con + s.charAt(0));
+			}
+			
+			return separarVC(s.substring(1), voc, con);
+			
+		}
 		
 }
