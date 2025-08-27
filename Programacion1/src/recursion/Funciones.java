@@ -1,6 +1,6 @@
 package recursion;
 
-public class Funciones1 {
+public class Funciones {
 
 	public static int longitud(String s) {
 

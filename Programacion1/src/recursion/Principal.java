@@ -9,6 +9,6 @@ public class Principal {
 		
 		//System.out.print(Funciones1.cantidadDeApariciones(palabra, 'n'));
 		//Funciones1.imprimirApariciones(palabra);
-		System.out.println(Funciones1.separarVC(palabra, "", ""));
+		System.out.println(Funciones.separarVC(palabra, "", ""));
 	}
 }
